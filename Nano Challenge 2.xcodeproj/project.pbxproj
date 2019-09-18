@@ -15,6 +15,7 @@
 		5108411D233226A500E23546 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5108411B233226A500E23546 /* LaunchScreen.storyboard */; };
 		51084128233226A500E23546 /* Nano_Challenge_2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51084127233226A500E23546 /* Nano_Challenge_2Tests.swift */; };
 		51084133233226A500E23546 /* Nano_Challenge_2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51084132233226A500E23546 /* Nano_Challenge_2UITests.swift */; };
+		51084145233227EC00E23546 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51084144233227EC00E23546 /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,8 @@
 		5108412E233226A500E23546 /* Nano Challenge 2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Nano Challenge 2UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		51084132233226A500E23546 /* Nano_Challenge_2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nano_Challenge_2UITests.swift; sourceTree = "<group>"; };
 		51084134233226A500E23546 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		510841402332272900E23546 /* Nano Challenge 2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Nano Challenge 2.entitlements"; sourceTree = "<group>"; };
+		51084144233227EC00E23546 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51084145233227EC00E23546 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +87,7 @@
 				51084126233226A500E23546 /* Nano Challenge 2Tests */,
 				51084131233226A500E23546 /* Nano Challenge 2UITests */,
 				5108410D233226A400E23546 /* Products */,
+				510841412332273200E23546 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +104,7 @@
 		5108410E233226A400E23546 /* Nano Challenge 2 */ = {
 			isa = PBXGroup;
 			children = (
+				510841402332272900E23546 /* Nano Challenge 2.entitlements */,
 				5108410F233226A400E23546 /* AppDelegate.swift */,
 				51084111233226A400E23546 /* ViewController.swift */,
 				51084113233226A400E23546 /* Main.storyboard */,
@@ -126,6 +132,14 @@
 				51084134233226A500E23546 /* Info.plist */,
 			);
 			path = "Nano Challenge 2UITests";
+			sourceTree = "<group>";
+		};
+		510841412332273200E23546 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				51084144233227EC00E23546 /* CloudKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,6 +210,14 @@
 				TargetAttributes = {
 					5108410B233226A400E23546 = {
 						CreatedOnToolsVersion = 10.3;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					51084122233226A500E23546 = {
 						CreatedOnToolsVersion = 10.3;
@@ -436,6 +458,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Nano Challenge 2/Nano Challenge 2.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BLQPCH7T63;
 				INFOPLIST_FILE = "Nano Challenge 2/Info.plist";
@@ -443,7 +466,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "AppleDeveloperAcademyBinus.Nano-Challenge-2";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kalebwijaya.Nano-Challenge-2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -454,6 +477,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Nano Challenge 2/Nano Challenge 2.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BLQPCH7T63;
 				INFOPLIST_FILE = "Nano Challenge 2/Info.plist";
@@ -461,7 +485,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "AppleDeveloperAcademyBinus.Nano-Challenge-2";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kalebwijaya.Nano-Challenge-2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
