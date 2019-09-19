@@ -13,21 +13,19 @@ import CloudKit
 
 class ViewController: UIViewController, CLLocationManagerDelegate, UNUserNotificationCenterDelegate {
     
+    @IBOutlet weak var eventTableList: UITableView!
+    
     let locationManager:CLLocationManager = CLLocationManager()
-    let database = CKContainer.default().sharedCloudDatabase
+    let database = CKContainer.default().publicCloudDatabase
     var auth:Bool = false
     var locAuth:Bool = false
     var currentLocation: CLLocation!
     var geoFenceRegion:CLCircularRegion!
+
+    var events = [CKRecord]()
     
     @IBAction func addBroadcast(_ sender: UIBarButtonItem) {
-        if(auth){
-            performSegue(withIdentifier: "createBroadcast", sender: nil)
-        }else{
-            let alert = UIAlertController(title: "Warning", message: "You Must Inside Academy To Create a Broadcast", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-        }
+        generateEvent()
     }
     
     override func viewDidLoad() {
@@ -44,6 +42,42 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UNUserNotific
         geoFenceRegion = CLCircularRegion(center: CLLocationCoordinate2DMake(-6.302122, 106.652183), radius: 50, identifier: "Apple Academy")
         
         locationManager.startMonitoring(for: geoFenceRegion)
+        
+        let nib = UINib(nibName: "EventTableViewCell", bundle: nil)
+        eventTableList.register(nib, forCellReuseIdentifier: "EventTableViewCell")
+        eventTableList.rowHeight = 110
+        pullToRef()
+        queryDatabase()
+    }
+    
+    func generateEvent(){
+        if(auth){
+            performSegue(withIdentifier: "createBroadcast", sender: nil)
+        }else{
+            let alert = UIAlertController(title: "Warning", message: "You Must Inside Academy To Create a Broadcast", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+        createUserActivity()
+    }
+    
+    func createUserActivity(){
+        let activity = NSUserActivity(activityType: UserActivityType.createBroadcast)
+        activity.title = "Generate Event Broadcast"
+        activity.isEligibleForSearch = true
+        activity.isEligibleForPrediction = true
+        
+        activity.persistentIdentifier = NSUserActivityPersistentIdentifier( UserActivityType.createBroadcast)
+        
+        self.userActivity = activity
+        activity.becomeCurrent()
+    }
+    
+    func pullToRef(){
+        let refreshControl = UIRefreshControl()
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to Refresh")
+        refreshControl.addTarget(self, action: #selector(queryDatabase), for: .valueChanged)
+        self.eventTableList.refreshControl = refreshControl
     }
     
     func detectUser(){
@@ -55,10 +89,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UNUserNotific
         if(distanceInMeters <= geoFenceRegion.radius/2){
             auth = true
         }
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didStartMonitoringFor region: CLRegion) {
-        
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -79,6 +109,51 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UNUserNotific
         auth = false
     }
     
+    @objc func queryDatabase(){
+        let query = CKQuery(recordType: "Event", predicate: NSPredicate(value: true))
+        database.perform(query, inZoneWith: nil) { (records, _) in
+            guard let records = records else { return }
+            self.events = records
+            DispatchQueue.main.async {
+                self.eventTableList.refreshControl?.endRefreshing()
+                self.eventTableList.reloadData()
+            }
+        }
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        self.queryDatabase()
+        self.eventTableList.reloadData()
+    }
+}
+
+extension ViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return events.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = eventTableList.dequeueReusableCell(withIdentifier: "EventTableViewCell", for: indexPath ) as! EventTableViewCell
+        cell.title.text = events[indexPath.row].value(forKey: "EventTitle") as? String
+        cell.date.text = events[indexPath.row].value(forKey: "EventDate") as? String
+        cell.desc.text = events[indexPath.row].value(forKey: "EventDesc") as? String
+        cell.participant.text = (events[indexPath.row].value(forKey: "EventParticipant") as? String)! + " People(s)"
+        cell.location.text = events[indexPath.row].value(forKey: "EventLocation") as? String
+        return cell
+    }
+    
+}
+
+extension ViewController{
     func requestPermissionNotifications(){
         let application =  UIApplication.shared
         
@@ -155,11 +230,4 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UNUserNotific
             }
         })
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 }
-

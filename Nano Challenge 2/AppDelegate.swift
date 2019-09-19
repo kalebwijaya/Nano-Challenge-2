@@ -88,6 +88,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
+    
+    func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
+        switch userActivity.activityType {
+        case UserActivityType.createBroadcast:
+            let navigatopnVC = window?.rootViewController as! UINavigationController
+            let homeVC = navigatopnVC.viewControllers.first as! ViewController
+            homeVC.generateEvent()
+        default:
+            print("No Such User Activity")
+        }
+        return true
+    }
 
 }
 

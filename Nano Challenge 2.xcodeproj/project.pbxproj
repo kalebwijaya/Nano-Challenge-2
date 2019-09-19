@@ -8,14 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		51084110233226A400E23546 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5108410F233226A400E23546 /* AppDelegate.swift */; };
-		51084112233226A400E23546 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51084111233226A400E23546 /* ViewController.swift */; };
+		51084112233226A400E23546 /* EventListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51084111233226A400E23546 /* EventListViewController.swift */; };
 		51084115233226A400E23546 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51084113233226A400E23546 /* Main.storyboard */; };
 		51084118233226A400E23546 /* Nano_Challenge_2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 51084116233226A400E23546 /* Nano_Challenge_2.xcdatamodeld */; };
 		5108411A233226A500E23546 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51084119233226A500E23546 /* Assets.xcassets */; };
 		5108411D233226A500E23546 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5108411B233226A500E23546 /* LaunchScreen.storyboard */; };
 		51084128233226A500E23546 /* Nano_Challenge_2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51084127233226A500E23546 /* Nano_Challenge_2Tests.swift */; };
 		51084133233226A500E23546 /* Nano_Challenge_2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51084132233226A500E23546 /* Nano_Challenge_2UITests.swift */; };
-		51084145233227EC00E23546 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51084144233227EC00E23546 /* CloudKit.framework */; };
+		5176C6262333657B009499CB /* CreateBroadcastController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5176C6252333657B009499CB /* CreateBroadcastController.swift */; };
+		5176C62923337A73009499CB /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5176C62723337A73009499CB /* EventTableViewCell.swift */; };
+		5176C62A23337A73009499CB /* EventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5176C62823337A73009499CB /* EventTableViewCell.xib */; };
+		5176C62E23338088009499CB /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5176C62D23338088009499CB /* CloudKit.framework */; };
+		5176C6592333B2EC009499CB /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5176C6582333B2EC009499CB /* IntentHandler.swift */; };
+		5176C65D2333B2EC009499CB /* Siri Event Crator.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5176C6562333B2EC009499CB /* Siri Event Crator.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5176C6642333B4E3009499CB /* UserActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5176C6612333B44F009499CB /* UserActivity.swift */; };
+		5176C6662333BD7C009499CB /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5176C6652333BD7C009499CB /* Intents.framework */; };
+		51A78C68233410BA00F75F1D /* JoinedEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A78C67233410BA00F75F1D /* JoinedEventViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,12 +41,33 @@
 			remoteGlobalIDString = 5108410B233226A400E23546;
 			remoteInfo = "Nano Challenge 2";
 		};
+		5176C65B2333B2EC009499CB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 51084104233226A400E23546 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5176C6552333B2EC009499CB;
+			remoteInfo = "Siri Event Crator";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5176C6402333A62F009499CB /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				5176C65D2333B2EC009499CB /* Siri Event Crator.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		5108410C233226A400E23546 /* Nano Challenge 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nano Challenge 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5108410F233226A400E23546 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		51084111233226A400E23546 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		51084111233226A400E23546 /* EventListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewController.swift; sourceTree = "<group>"; };
 		51084114233226A400E23546 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		51084117233226A400E23546 /* Nano_Challenge_2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Nano_Challenge_2.xcdatamodel; sourceTree = "<group>"; };
 		51084119233226A500E23546 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,7 +80,16 @@
 		51084132233226A500E23546 /* Nano_Challenge_2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nano_Challenge_2UITests.swift; sourceTree = "<group>"; };
 		51084134233226A500E23546 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		510841402332272900E23546 /* Nano Challenge 2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Nano Challenge 2.entitlements"; sourceTree = "<group>"; };
-		51084144233227EC00E23546 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		5176C6252333657B009499CB /* CreateBroadcastController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBroadcastController.swift; sourceTree = "<group>"; };
+		5176C62723337A73009499CB /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
+		5176C62823337A73009499CB /* EventTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventTableViewCell.xib; sourceTree = "<group>"; };
+		5176C62D23338088009499CB /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		5176C6562333B2EC009499CB /* Siri Event Crator.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Siri Event Crator.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5176C6582333B2EC009499CB /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
+		5176C65A2333B2EC009499CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5176C6612333B44F009499CB /* UserActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserActivity.swift; sourceTree = "<group>"; };
+		5176C6652333BD7C009499CB /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
+		51A78C67233410BA00F75F1D /* JoinedEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinedEventViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +97,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				51084145233227EC00E23546 /* CloudKit.framework in Frameworks */,
+				5176C6662333BD7C009499CB /* Intents.framework in Frameworks */,
+				5176C62E23338088009499CB /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +116,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5176C6532333B2EC009499CB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -86,6 +132,7 @@
 				5108410E233226A400E23546 /* Nano Challenge 2 */,
 				51084126233226A500E23546 /* Nano Challenge 2Tests */,
 				51084131233226A500E23546 /* Nano Challenge 2UITests */,
+				5176C6572333B2EC009499CB /* Siri Event Crator */,
 				5108410D233226A400E23546 /* Products */,
 				510841412332273200E23546 /* Frameworks */,
 			);
@@ -97,6 +144,7 @@
 				5108410C233226A400E23546 /* Nano Challenge 2.app */,
 				51084123233226A500E23546 /* Nano Challenge 2Tests.xctest */,
 				5108412E233226A500E23546 /* Nano Challenge 2UITests.xctest */,
+				5176C6562333B2EC009499CB /* Siri Event Crator.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -104,14 +152,15 @@
 		5108410E233226A400E23546 /* Nano Challenge 2 */ = {
 			isa = PBXGroup;
 			children = (
-				510841402332272900E23546 /* Nano Challenge 2.entitlements */,
 				5108410F233226A400E23546 /* AppDelegate.swift */,
-				51084111233226A400E23546 /* ViewController.swift */,
 				51084113233226A400E23546 /* Main.storyboard */,
-				51084119233226A500E23546 /* Assets.xcassets */,
 				5108411B233226A500E23546 /* LaunchScreen.storyboard */,
 				5108411E233226A500E23546 /* Info.plist */,
-				51084116233226A400E23546 /* Nano_Challenge_2.xcdatamodeld */,
+				5176C62C23337AAD009499CB /* Event List */,
+				51A78C6E2334125300F75F1D /* Create Broadcast */,
+				51A78C662334108D00F75F1D /* Joined Event */,
+				51A78C6D2334123F00F75F1D /* XIB File */,
+				5176C62B23337A85009499CB /* Data */,
 			);
 			path = "Nano Challenge 2";
 			sourceTree = "<group>";
@@ -137,9 +186,63 @@
 		510841412332273200E23546 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				51084144233227EC00E23546 /* CloudKit.framework */,
+				5176C6652333BD7C009499CB /* Intents.framework */,
+				5176C62D23338088009499CB /* CloudKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5176C62B23337A85009499CB /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				51084119233226A500E23546 /* Assets.xcassets */,
+				510841402332272900E23546 /* Nano Challenge 2.entitlements */,
+				51084116233226A400E23546 /* Nano_Challenge_2.xcdatamodeld */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		5176C62C23337AAD009499CB /* Event List */ = {
+			isa = PBXGroup;
+			children = (
+				5176C6612333B44F009499CB /* UserActivity.swift */,
+				51084111233226A400E23546 /* EventListViewController.swift */,
+			);
+			path = "Event List";
+			sourceTree = "<group>";
+		};
+		5176C6572333B2EC009499CB /* Siri Event Crator */ = {
+			isa = PBXGroup;
+			children = (
+				5176C6582333B2EC009499CB /* IntentHandler.swift */,
+				5176C65A2333B2EC009499CB /* Info.plist */,
+			);
+			path = "Siri Event Crator";
+			sourceTree = "<group>";
+		};
+		51A78C662334108D00F75F1D /* Joined Event */ = {
+			isa = PBXGroup;
+			children = (
+				51A78C67233410BA00F75F1D /* JoinedEventViewController.swift */,
+			);
+			path = "Joined Event";
+			sourceTree = "<group>";
+		};
+		51A78C6D2334123F00F75F1D /* XIB File */ = {
+			isa = PBXGroup;
+			children = (
+				5176C62723337A73009499CB /* EventTableViewCell.swift */,
+				5176C62823337A73009499CB /* EventTableViewCell.xib */,
+			);
+			path = "XIB File";
+			sourceTree = "<group>";
+		};
+		51A78C6E2334125300F75F1D /* Create Broadcast */ = {
+			isa = PBXGroup;
+			children = (
+				5176C6252333657B009499CB /* CreateBroadcastController.swift */,
+			);
+			path = "Create Broadcast";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,10 +255,12 @@
 				51084108233226A400E23546 /* Sources */,
 				51084109233226A400E23546 /* Frameworks */,
 				5108410A233226A400E23546 /* Resources */,
+				5176C6402333A62F009499CB /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				5176C65C2333B2EC009499CB /* PBXTargetDependency */,
 			);
 			name = "Nano Challenge 2";
 			productName = "Nano Challenge 2";
@@ -198,6 +303,23 @@
 			productReference = 5108412E233226A500E23546 /* Nano Challenge 2UITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		5176C6552333B2EC009499CB /* Siri Event Crator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5176C65E2333B2EC009499CB /* Build configuration list for PBXNativeTarget "Siri Event Crator" */;
+			buildPhases = (
+				5176C6522333B2EC009499CB /* Sources */,
+				5176C6532333B2EC009499CB /* Frameworks */,
+				5176C6542333B2EC009499CB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Siri Event Crator";
+			productName = "Siri Event Crator";
+			productReference = 5176C6562333B2EC009499CB /* Siri Event Crator.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -211,7 +333,13 @@
 					5108410B233226A400E23546 = {
 						CreatedOnToolsVersion = 10.3;
 						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
 							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.Siri = {
 								enabled = 1;
 							};
 							com.apple.iCloud = {
@@ -226,6 +354,9 @@
 					5108412D233226A500E23546 = {
 						CreatedOnToolsVersion = 10.3;
 						TestTargetID = 5108410B233226A400E23546;
+					};
+					5176C6552333B2EC009499CB = {
+						CreatedOnToolsVersion = 10.3;
 					};
 				};
 			};
@@ -245,6 +376,7 @@
 				5108410B233226A400E23546 /* Nano Challenge 2 */,
 				51084122233226A500E23546 /* Nano Challenge 2Tests */,
 				5108412D233226A500E23546 /* Nano Challenge 2UITests */,
+				5176C6552333B2EC009499CB /* Siri Event Crator */,
 			);
 		};
 /* End PBXProject section */
@@ -254,6 +386,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5176C62A23337A73009499CB /* EventTableViewCell.xib in Resources */,
 				5108411D233226A500E23546 /* LaunchScreen.storyboard in Resources */,
 				5108411A233226A500E23546 /* Assets.xcassets in Resources */,
 				51084115233226A400E23546 /* Main.storyboard in Resources */,
@@ -274,6 +407,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5176C6542333B2EC009499CB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -282,7 +422,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				51084118233226A400E23546 /* Nano_Challenge_2.xcdatamodeld in Sources */,
-				51084112233226A400E23546 /* ViewController.swift in Sources */,
+				51A78C68233410BA00F75F1D /* JoinedEventViewController.swift in Sources */,
+				5176C6642333B4E3009499CB /* UserActivity.swift in Sources */,
+				5176C6262333657B009499CB /* CreateBroadcastController.swift in Sources */,
+				51084112233226A400E23546 /* EventListViewController.swift in Sources */,
+				5176C62923337A73009499CB /* EventTableViewCell.swift in Sources */,
 				51084110233226A400E23546 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -303,6 +447,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5176C6522333B2EC009499CB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5176C6592333B2EC009499CB /* IntentHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -315,6 +467,11 @@
 			isa = PBXTargetDependency;
 			target = 5108410B233226A400E23546 /* Nano Challenge 2 */;
 			targetProxy = 5108412F233226A500E23546 /* PBXContainerItemProxy */;
+		};
+		5176C65C2333B2EC009499CB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5176C6552333B2EC009499CB /* Siri Event Crator */;
+			targetProxy = 5176C65B2333B2EC009499CB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -457,8 +614,9 @@
 		51084138233226A500E23546 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Nano Challenge 2/Nano Challenge 2.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Nano Challenge 2/Data/Nano Challenge 2.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BLQPCH7T63;
 				INFOPLIST_FILE = "Nano Challenge 2/Info.plist";
@@ -476,8 +634,9 @@
 		51084139233226A500E23546 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Nano Challenge 2/Nano Challenge 2.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Nano Challenge 2/Data/Nano Challenge 2.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BLQPCH7T63;
 				INFOPLIST_FILE = "Nano Challenge 2/Info.plist";
@@ -574,6 +733,44 @@
 			};
 			name = Release;
 		};
+		5176C65F2333B2EC009499CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BLQPCH7T63;
+				INFOPLIST_FILE = "Siri Event Crator/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kalebwijaya.Nano-Challenge-2.Siri-Event-Crator";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5176C6602333B2EC009499CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BLQPCH7T63;
+				INFOPLIST_FILE = "Siri Event Crator/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kalebwijaya.Nano-Challenge-2.Siri-Event-Crator";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -609,6 +806,15 @@
 			buildConfigurations = (
 				5108413E233226A500E23546 /* Debug */,
 				5108413F233226A500E23546 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5176C65E2333B2EC009499CB /* Build configuration list for PBXNativeTarget "Siri Event Crator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5176C65F2333B2EC009499CB /* Debug */,
+				5176C6602333B2EC009499CB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
